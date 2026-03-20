@@ -1,13 +1,9 @@
-import { Toaster } from 'react-hot-toast';
-import AppRoutes from './routes/AppRoutes';
-import { AuthProvider } from './context/AuthContext';
-
 function App() {
   return (
-    <AuthProvider>
-      <Toaster position="top-center" reverseOrder={false} />
-      <AppRoutes />
-    </AuthProvider>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>Linkcode LMS</h1>
+      <p>Clean slate ready. Start building your frontend here!</p>
+    </div>
   );
 }
 
