@@ -1,0 +1,122 @@
+.authPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: hsl(229, 27%, 90%);
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    height: 85vh;
+    max-height: 800px;
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.resetContainer {
+    max-width: 600px;
+}
+
+.slimContainer {
+    max-width: 650px;
+    /* Increased further for better visual balance */
+    height: auto;
+    /* Shrink to fit content */
+    min-height: 550px;
+    /* Increased height for better proportions */
+    max-height: 90vh;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.imageSection {
+    flex: 1.1;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-right: 1px solid #f0f0f0;
+}
+
+.formSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 5rem;
+    position: relative;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.slimFormSection {
+    padding: 4rem 3.5rem;
+    /* Slightly more padding for the slim look */
+}
+
+.slimFormSection>* {
+    max-width: 420px;
+    /* Prevent elements from stretching too wide */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .imageSection {
+        display: none;
+    }
+
+    .formSection {
+        padding: 2rem;
+    }
+
+    .container {
+        height: 90vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .authPage {
+        padding: 0;
+    }
+
+    .container {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .formSection {
+        padding: 2rem 1.5rem;
+    }
+}

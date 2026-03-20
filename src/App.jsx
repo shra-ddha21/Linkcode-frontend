@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/routes';
+
+function App() {
+  return <RouterProvider router={router} />;
+=======
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
@@ -27,6 +35,7 @@ function App() {
       {showLayout && <Footer />}
     </div>
   );
+>>>>>>> c718952162a51fca5babe06406688083bd7c2476
 }
 
 export default App;

@@ -1,0 +1,77 @@
+.topHeader {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    text-align: right;
+}
+
+.backLink {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    font-size: 0.85rem;
+    color: #666;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.backLink:hover {
+    color: #4b49ac;
+}
+
+.topLinkSection {
+    text-align: right;
+}
+
+.memberText {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.signupLink {
+    color: #4b49ac;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.signupLink:hover {
+    text-decoration: underline;
+}
+
+.headerArea {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.iconCircle {
+    width: 56px;
+    height: 56px;
+    background-color: #f4f3ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #101828;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #667085;
+}
+
+@media (max-width: 900px) {
+    .topHeader { right: 2rem; }
+}
+
+@media (max-width: 600px) {
+    .topHeader { right: 1.5rem; top: 1.5rem; }
+}
