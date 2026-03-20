@@ -1,0 +1,56 @@
+:root {
+  --primary-blue: #0293DC;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --gray-light: #f5f5f5;
+  --gray-medium: #888888;
+  --gray-dark: #333333;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+  padding: 80px 20px 20px; /* Top padding to account for sticky navbar */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
