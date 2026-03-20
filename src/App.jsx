@@ -1,10 +1,9 @@
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/routes';
+
 function App() {
-  return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Linkcode LMS</h1>
-      <p>Clean slate ready. Start building your frontend here!</p>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
