@@ -1,0 +1,86 @@
+.navbar-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.navbar-logo img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--black);
+  font-size: 16px;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-blue);
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-link {
+  color: var(--black);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.register-btn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 10px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(2, 147, 220, 0.3);
+}
+
+.register-btn:hover {
+  background-color: #027bb8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(2, 147, 220, 0.4);
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    width: 95%;
+    top: 10px;
+  }
+  
+  .navbar-links {
+    display: none; /* Mobile menu logic can be added later */
+  }
+  
+  .navbar-content {
+    padding: 8px 20px;
+  }
+}
