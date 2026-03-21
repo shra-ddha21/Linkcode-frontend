@@ -21,10 +21,21 @@ const Signup = () => {
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [id]: value
-        }));
+        
+        if (id === 'mobile') {
+            // Only allow digits and limit to 10 digits
+            const numericValue = value.replace(/\D/g, '').slice(0, 10);
+            setFormData(prev => ({
+                ...prev,
+                [id]: numericValue
+            }));
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [id]: value
+            }));
+        }
+
         // Clear error when user starts typing
         if (errors[id]) {
             setErrors(prev => ({ ...prev, [id]: '' }));
@@ -118,7 +129,7 @@ const Signup = () => {
                     <FormInput
                         label="Mobile No"
                         id="mobile"
-                        type="number"
+                        type="tel"
                         placeholder="Enter mobile"
                         value={formData.mobile}
                         onChange={handleChange}
