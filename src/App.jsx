@@ -1,24 +1,28 @@
-<<<<<<< HEAD
 import React from 'react';
-import { RouterProvider } from 'react-router-dom';
-import router from './routes/routes';
-
-function App() {
-  return <RouterProvider router={router} />;
-=======
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import AboutUs from './pages/AboutUs';
 import Gallery from './pages/Gallery';
 import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
+import VerifyOTP from './pages/VerifyOTP';
+import ResetPassword from './pages/ResetPassword';
+import ResetSuccess from './pages/ResetSuccess';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 function App() {
   const location = useLocation();
-  const noLayoutPaths = ['/login', '/signup'];
+  const noLayoutPaths = [
+    '/login', 
+    '/signup', 
+    '/forgot-password', 
+    '/verify-otp', 
+    '/reset-password', 
+    '/reset-success'
+  ];
   const showLayout = !noLayoutPaths.includes(location.pathname);
 
   return (
@@ -30,12 +34,15 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/verify-otp" element={<VerifyOTP />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/reset-success" element={<ResetSuccess />} />
       </Routes>
       {showLayout && <Footer />}
     </div>
   );
->>>>>>> c718952162a51fca5babe06406688083bd7c2476
 }
 
 export default App;
