@@ -1,0 +1,51 @@
+.signupForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.row > div {
+    flex: 1;
+}
+
+.selectGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.select {
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+.select:focus {
+    border-bottom-color: #ffc107;
+}
+
+.errorMessage {
+    color: #d92d20;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
