@@ -1,0 +1,58 @@
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    background: transparent;
+}
+
+.input:focus {
+    border-bottom-color: #ffc107;
+}
+
+.eyeBtn {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.eyeBtn:hover {
+    color: #666;
+}
+
+.errorText {
+    font-size: 0.75rem;
+    color: #d92d20;
+    margin-top: 0.3rem;
+    font-weight: 500;
+}

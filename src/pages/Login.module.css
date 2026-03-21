@@ -1,0 +1,29 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.forgotPassword {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.forgotPassword a {
+    color: #666;
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgotPassword a:hover {
+    text-decoration: underline;
+    color: #4b49ac;
+}
+
+.errorMessage {
+    color: #d92d20;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
