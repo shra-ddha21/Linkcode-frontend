@@ -35,8 +35,8 @@ const Login = () => {
 
     return (
         <AuthCard>
-            <AuthHeader 
-                topLinkText="Not a member?" 
+            <AuthHeader
+                topLinkText="Not a member?"
                 topLinkPath="/signup"
                 title="Log in to your account"
                 subtitle="Enter your details to access your dashboard."
