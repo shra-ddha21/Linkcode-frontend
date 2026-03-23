@@ -15,19 +15,66 @@ const Signup = () => {
         gender: '',
         password: ''
     });
+    const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [id]: value
-        }));
+        
+        if (id === 'mobile') {
+            // Only allow digits and limit to 10 digits
+            const numericValue = value.replace(/\D/g, '').slice(0, 10);
+            setFormData(prev => ({
+                ...prev,
+                [id]: numericValue
+            }));
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [id]: value
+            }));
+        }
+
+        // Clear error when user starts typing
+        if (errors[id]) {
+            setErrors(prev => ({ ...prev, [id]: '' }));
+        }
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        // Name validation (only letters, min 2)
+        const nameRegex = /^[A-Za-z]{2,30}$/;
+        if (!nameRegex.test(formData.firstName.trim())) {
+            newErrors.firstName = 'First name must be at least 2 letters';
+        }
+        if (!nameRegex.test(formData.lastName.trim())) {
+            newErrors.lastName = 'Last name must be at least 2 letters';
+        }
+
+        // Password validation (min 8, 1 upper, 1 lower, 1 number, 1 special)
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordRegex.test(formData.password)) {
+            newErrors.password = 'Password must be 8+ chars with uppercase, lowercase, number and special char';
+        }
+
+        // Mobile validation (10 digits)
+        const mobileRegex = /^[0-9]{10}$/;
+        if (!mobileRegex.test(formData.mobile)) {
+            newErrors.mobile = 'Mobile number must be 10 digits';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!validateForm()) return;
+
         setLoading(true);
         setError('');
         setTimeout(() => {
@@ -39,14 +86,14 @@ const Signup = () => {
 
     return (
         <AuthCard>
-            <AuthHeader 
-                topLinkText="Already a member?" 
+            <AuthHeader
+                topLinkText="Already a member?"
                 topLinkPath="/login"
                 title="Create an account"
                 subtitle="Enter your details to get started."
             />
 
-            <form className={styles.signupForm} onSubmit={handleSubmit}>
+            <form className={styles.signupForm} onSubmit={handleSubmit} noValidate>
                 <div className={styles.row}>
                     <FormInput
                         label="First Name"
@@ -54,6 +101,7 @@ const Signup = () => {
                         placeholder="First name"
                         value={formData.firstName}
                         onChange={handleChange}
+                        error={errors.firstName}
                         required
                     />
                     <FormInput
@@ -62,6 +110,7 @@ const Signup = () => {
                         placeholder="Last name"
                         value={formData.lastName}
                         onChange={handleChange}
+                        error={errors.lastName}
                         required
                     />
                 </div>
@@ -84,6 +133,7 @@ const Signup = () => {
                         placeholder="Enter mobile"
                         value={formData.mobile}
                         onChange={handleChange}
+                        error={errors.mobile}
                         required
                     />
                     <div className={styles.selectGroup}>
@@ -110,9 +160,11 @@ const Signup = () => {
                     placeholder="Create password"
                     value={formData.password}
                     onChange={handleChange}
+                    error={errors.password}
                     required
                     allowToggle={true}
                 />
+
 
                 {error && <p className={styles.errorMessage}>{error}</p>}
 
@@ -124,4 +176,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default SignUp;

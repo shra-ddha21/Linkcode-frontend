@@ -26,15 +26,25 @@
 }
 
 .slimContainer {
-    max-width: 650px; /* Increased further for better visual balance */
-    height: auto; /* Shrink to fit content */
-    min-height: 650px; /* Further increased height as requested */
+    max-width: 650px;
+    /* Increased further for better visual balance */
+    height: auto;
+    /* Shrink to fit content */
+    min-height: 550px;
+    /* Increased height for better proportions */
     max-height: 90vh;
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .imageSection {
@@ -58,29 +68,55 @@
 }
 
 .slimFormSection {
-    padding: 4rem 3.5rem; /* Slightly more padding for the slim look */
+    padding: 4rem 3.5rem;
+    /* Slightly more padding for the slim look */
 }
 
-.slimFormSection > * {
-    max-width: 420px; /* Prevent elements from stretching too wide */
+.slimFormSection>* {
+    max-width: 420px;
+    /* Prevent elements from stretching too wide */
     width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media (max-width: 900px) {
-    .imageSection { display: none; }
-    .formSection { padding: 2rem; }
-    .container { height: 90vh; }
+    .imageSection {
+        display: none;
+    }
+
+    .formSection {
+        padding: 2rem;
+    }
+
+    .container {
+        height: 90vh;
+    }
 }
 
 @media (max-width: 600px) {
-    .authPage { padding: 0; }
-    .container { height: 100vh; border-radius: 0; }
-    .formSection { padding: 2rem 1.5rem; }
+    .authPage {
+        padding: 0;
+    }
+
+    .container {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .formSection {
+        padding: 2rem 1.5rem;
+    }
 }
